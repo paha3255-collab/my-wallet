@@ -15,7 +15,22 @@ const categories = {
 
 function App() {
   const [tab, setTab] = useState('home');
-  const [transactions, setTransactions] = useState([]);
+  
+const [transactions, setTransactions] = useState(() => {
+  try {
+    return JSON.parse(localStorage.getItem('my-wallet-transactions') || '[]');
+  } catch {
+    return [];
+  }
+});
+
+useEffect(() => {
+  localStorage.setItem(
+    'my-wallet-transactions',
+    JSON.stringify(transactions)
+  );
+}, [transactions]);
+
   const [modal, setModal] = useState('');
   const [type, setType] = useState('expense');
   const [amount, setAmount] = useState('');
