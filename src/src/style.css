@@ -1,0 +1,83 @@
+
+:root {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #182235;
+  background: #f4f6fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+.app { width: 100%; max-width: 760px; min-height: 100vh; margin: auto; padding: 22px 20px 105px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-icon { width: 46px; height: 46px; display: grid; place-items: center; color: white; background: #4f63e8; border-radius: 15px; }
+.brand strong, .brand small { display: block; }
+.brand strong { font-size: 17px; letter-spacing: -.4px; }
+.brand small { margin-top: 4px; color: #8a94a8; font-size: 12px; }
+.round-btn { display: grid; place-items: center; width: 42px; height: 42px; color: #69758b; background: white; border: 1px solid #e8ebf3; border-radius: 14px; }
+.balance-card { padding: 25px; color: white; border-radius: 25px; background: linear-gradient(135deg, #202e59, #4559d9 85%); box-shadow: 0 15px 30px #3549a326; }
+.balance-heading { display: flex; align-items: center; justify-content: space-between; color: #d1d9ff; font-size: 13px; }
+.balance-card h1 { margin: 15px 0 7px; font-size: clamp(30px, 7vw, 40px); letter-spacing: -1.4px; overflow-wrap: anywhere; }
+.balance-caption { color: #c0caff; font-size: 12px; }
+.balance-actions { display: flex; gap: 12px; margin-top: 25px; }
+.balance-actions button { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 8px; border: 1px solid #ffffff40; border-radius: 13px; color: white; background: #ffffff16; font-size: 13px; font-weight: 600; }
+.balance-actions button:active { background: #ffffff30; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; margin-top: 17px; }
+.stat-card { min-width: 0; padding: 17px 15px; background: white; border: 1px solid #edf0f6; border-radius: 19px; }
+.stat-icon { display: grid; place-items: center; width: 34px; height: 34px; margin-bottom: 14px; border-radius: 11px; }
+.income-card .stat-icon { color: #129b72; background: #e5f8f0; }
+.expense-card .stat-icon { color: #e35f70; background: #fff0f1; }
+.stat-card span { display: block; color: #8590a5; font-size: 11px; line-height: 1.5; }
+.stat-card strong { display: block; margin-top: 7px; font-size: clamp(15px, 3.5vw, 20px); letter-spacing: -.5px; overflow-wrap: anywhere; }
+.section { margin-top: 29px; }
+.section-title { display: flex; align-items: center; justify-content: space-between; margin-bottom: 13px; }
+h2 { margin: 0; font-size: 18px; letter-spacing: -.4px; }
+.text-btn { display: flex; align-items: center; gap: 3px; padding: 7px 0 7px 8px; border: 0; color: #5368df; background: transparent; font-size: 13px; }
+.empty { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 28px 20px; color: #8490a5; background: white; border: 1px solid #edf0f6; border-radius: 19px; }
+.empty-icon { display: grid; place-items: center; width: 53px; height: 53px; margin-bottom: 12px; color: #6879e9; background: #eef0ff; border-radius: 17px; }
+.empty strong { color: #28344a; font-size: 14px; }
+.empty p { max-width: 260px; margin: 8px 0 0; font-size: 12px; line-height: 1.6; }
+.transaction { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #e9edf4; }
+.transaction:last-child { border-bottom: 0; }
+.transaction-icon { display: grid; flex-shrink: 0; place-items: center; width: 43px; height: 43px; border-radius: 14px; }
+.transaction-icon.income { color: #129b72; background: #e5f8f0; }
+.transaction-icon.expense { color: #e35f70; background: #fff0f1; }
+.transaction-info { flex: 1; min-width: 0; }
+.transaction-info strong, .transaction-info span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.transaction-info strong { font-size: 13px; }
+.transaction-info span { margin-top: 5px; color: #8a94a8; font-size: 11px; }
+.transaction-amount { font-size: 13px; white-space: nowrap; }
+.transaction-amount.income { color: #129b72; }
+.transaction-amount.expense { color: #e35f70; }
+.page-section { padding-top: 4px; }
+.page-section > h2 { margin-bottom: 20px; }
+.setting-row { display: flex; justify-content: space-between; gap: 12px; padding: 18px 0; border-bottom: 1px solid #e5e9f2; font-size: 13px; }
+.setting-row span { color: #8490a5; }
+.setting-row strong { text-align: right; }
+.hint { color: #8490a5; font-size: 12px; line-height: 1.7; }
+.bottom-nav { position: fixed; z-index: 5; bottom: 0; left: 50%; display: flex; justify-content: space-around; width: 100%; max-width: 760px; padding: 12px 8px calc(12px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: #ffffffed; border-top: 1px solid #e9edf4; backdrop-filter: blur(18px); }
+.nav-item { display: flex; flex: 1; flex-direction: column; align-items: center; gap: 5px; padding: 5px 0; border: 0; color: #929bb0; background: transparent; font-size: 10px; }
+.nav-item.active { color: #5266e6; font-weight: 700; }
+.overlay { position: fixed; z-index: 10; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: 15px; background: #10182b80; }
+.modal { width: 100%; max-width: 500px; max-height: 92vh; overflow-y: auto; padding: 22px; background: white; border-radius: 25px; box-shadow: 0 20px 70px #0002; }
+.modal-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.modal-heading h2 { font-size: 20px; }
+.type-switch { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 5px; margin-bottom: 20px; background: #f2f4f9; border-radius: 13px; }
+.type-switch button { padding: 11px; border: 0; border-radius: 10px; color: #7e899e; background: transparent; font-size: 13px; }
+.type-switch .selected { background: white; box-shadow: 0 2px 8px #19284b12; font-weight: 700; }
+.type-switch .income-selected { color: #11966e; }
+.type-switch .expense-selected { color: #df5869; }
+.modal label { display: block; margin-bottom: 16px; color: #5f6b80; font-size: 12px; font-weight: 600; }
+.modal input, .modal select { display: block; width: 100%; min-height: 48px; margin-top: 8px; padding: 12px; border: 1px solid #e1e6f0; border-radius: 12px; outline: none; color: #182235; background: white; font-size: 14px; }
+.modal input:focus, .modal select:focus { border-color: #6476ed; box-shadow: 0 0 0 3px #6476ed20; }
+.submit-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 49px; margin-top: 5px; border: 0; border-radius: 13px; color: white; background: #5367e5; font-weight: 700; }
+@media (min-width: 600px) {
+  .app { padding-top: 30px; }
+  .overlay { align-items: center; }
+  .modal { border-radius: 25px; }
+}
